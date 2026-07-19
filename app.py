@@ -203,17 +203,36 @@ def main():
             
             # Generate final prediction
             prediction = model.predict(ordered_df)
-            st.write("Actual Label:", st.session_state.current_claim["fraud_reported"])
-            st.write("Prediction:", prediction[0])
+            actual = st.session_state.current_claim["fraud_reported"]
             
-            # Display Clean Result Box
+            if actual in [1, "1", "Y", "y"]:
+                actual = "Fraud"
+            else:
+                actual = "Non-Fraud"
+            
+            pred = "Fraud" if prediction[0] == 1 else "Non-Fraud"
+            
+            st.write(f"**Dataset Label:** {actual}")
+            st.write(f"**Model Prediction:** {pred}")
+            
+            # Display Result
             if prediction[0] == 1:
                 st.error("## ❌ FRAUD")
-                st.write("#### Explanation")
-                st.warning("This insurance claim contains characteristics similar to previously identified fraudulent claims. Further manual investigation is recommended.")
             else:
                 st.success("## ✅ NON-FRAUD")
-                st.write("#### Explanation")
+            
+            # Verification
+            if actual == pred:
+                st.success("✅ Prediction matches the dataset label.")
+            else:
+                st.warning("⚠️ Prediction differs from the dataset label.")
+            
+            # Explanation
+            st.write("#### Explanation")
+            
+            if prediction[0] == 1:
+                st.warning("This insurance claim contains characteristics similar to previously identified fraudulent claims. Further manual investigation is recommended.")
+            else:
                 st.info("This insurance claim appears consistent with genuine claims based on the trained machine learning model.")
             
             # ========================================================
