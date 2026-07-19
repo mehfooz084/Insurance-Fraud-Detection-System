@@ -6,7 +6,7 @@ A Machine Learning-based web application that predicts whether an insurance clai
 
 ## 🚀 Live Demo
 
-> **https://insurance-fraud-detection-system-b497ktsuzbhjjdyilo3ne9.streamlit.app/**
+> **https://insurance-fraud-detection-system-sonr8fyufyju5vqrzh2gxc.streamlit.app/**
 
 ---
 
