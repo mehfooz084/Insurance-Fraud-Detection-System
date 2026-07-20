@@ -203,30 +203,14 @@ def main():
             
             # Generate final prediction
             prediction = model.predict(ordered_df)
-            actual = st.session_state.current_claim["fraud_reported"]
-            
-            if actual in [1, "1", "Y", "y"]:
-                actual = "Fraud"
-            else:
-                actual = "Non-Fraud"
-            
-            pred = "Fraud" if prediction[0] == 1 else "Non-Fraud"
-            
-            st.write(f"**Dataset Label:** {actual}")
-            st.write(f"**Model Prediction:** {pred}")
-            
+            st.subheader("Prediction Result")
+
             # Display Result
             if prediction[0] == 1:
                 st.error("## ❌ FRAUD")
             else:
                 st.success("## ✅ NON-FRAUD")
-            
-            # Verification
-            if actual == pred:
-                st.success("✅ Prediction matches the dataset label.")
-            else:
-                st.warning("⚠️ Prediction differs from the dataset label.")
-            
+                
             # Explanation
             st.write("#### Explanation")
             
