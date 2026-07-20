@@ -203,7 +203,7 @@ def main():
             
             # Generate final prediction
             prediction = model.predict(ordered_df)
-            st.subheader("Prediction Result")
+            
 
             # Display Result
             if prediction[0] == 1:
