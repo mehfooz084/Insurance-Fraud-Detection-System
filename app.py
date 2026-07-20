@@ -222,21 +222,29 @@ def main():
             # ========================================================
             # SECTION 8: Prediction Summary
             # ========================================================
-            st.write("### Prediction Summary")
-            summary_data = {
-                "Total Claim Amount": [user_input.get('total_claim_amount')],
-                "Incident Severity": [user_input.get('incident_severity')],
-                "Witnesses": [user_input.get('witnesses')],
-                "Police Report Available": [user_input.get('police_report_available')],
-                "Property Damage": [user_input.get('property_damage')]
-            }
-            st.dataframe(pd.DataFrame(summary_data), use_container_width=True, hide_index=True)
-                
-        except ValueError as ve:
-            st.error(f"Value Error: {str(ve)}")
-            st.info("Tip: Ensure your model was trained on all features or update the data processing logic.")
-        except Exception as e:
-            st.error(f"An error occurred during prediction processing: {str(e)}")
+            # Prediction Summary
+            st.subheader("Prediction Summary")
+            
+            if prediction[0] == 1:
+                st.warning(
+                    """
+                    The model predicts that this insurance claim is **likely to be Fraud**
+                    based on the provided claim information.
+            
+                    This prediction is intended to assist decision-making and should be
+                    verified through further investigation before taking any action.
+                    """
+                )
+            else:
+                st.info(
+                    """
+                    The model predicts that this insurance claim is **likely to be Non-Fraud**
+                    based on the provided claim information.
+            
+                    This prediction is intended to assist decision-making and should not be
+                    considered a final verdict without expert review.
+                    """
+                )
 
         st.markdown("---")
 
