@@ -246,7 +246,7 @@ def main():
                     """
                 )
 
-        st.markdown("---")
+             st.markdown("---")
 
     # ========================================================
     # SECTION 9: About Section
