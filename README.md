@@ -11,11 +11,6 @@ The project demonstrates an end-to-end Machine Learning workflow, from data prep
 🌐 **Live Application:**  
 https://fraudclaimdetection.vercel.app
 
-### API Health Check
-
-https://fraudclaimdetection.vercel.app/api/health
-
-The health endpoint verifies that the model, dataset, and label encoders are successfully loaded.
 
 ---
 
