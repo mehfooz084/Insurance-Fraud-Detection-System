@@ -95,13 +95,5 @@ The project follows an end-to-end Machine Learning workflow:
 
 The Decision Tree model was selected based on its performance in the project, achieving an accuracy of approximately **80%**.
 
----
-
-## 🔌 API Endpoints
-
-The application provides the following REST API endpoints:
-
-### 1. Health Check
-
 ```http
 GET /api/health
