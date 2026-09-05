@@ -89,6 +89,3 @@ The project follows an end-to-end Machine Learning workflow:
 **Decision Tree Classifier**
 
 The Decision Tree model was selected based on its performance in the project, achieving an accuracy of approximately **80%**.
-
-```http
-GET /api/health
