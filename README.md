@@ -8,7 +8,7 @@ The project demonstrates an end-to-end Machine Learning workflow, from data prep
 
 ## 🚀 Live Demo
 
-🌐 **Live Application:** [Try the Live Demo](https://fraudclaimdetection.vercel.app)
+🌐 **Live Application:** [Try the Live Demo](https://insurancefraudclaim.vercel.app/)
 
 
 ---
