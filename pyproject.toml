@@ -1,0 +1,16 @@
+[project]
+name = "fraud-claim-detection"
+version = "0.1.0"
+description = "Fraud Claim Detection System"
+requires-python = ">=3.10"
+dependencies = [
+    "flask",
+    "flask-cors",
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "joblib"
+]
+
+[tool.vercel]
+entrypoint = "flask_api:app"
